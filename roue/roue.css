@@ -1,0 +1,354 @@
+body {
+  background-color: #1E1E1E;
+  height: 100vh;
+  overflow: hidden;
+  color: #FFF;
+  font-style: normal;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100dvw;
+  height: 100dvh;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(251deg, rgba(82, 20, 20, 0.589) -4.29%, #232020 53.94%, rgba(58, 14, 32, 0.486) 101.89%);
+}
+
+.back {
+  width: 110dvw;
+  height: 200dvh;
+  transform: "rotate(-38.037deg)";
+  flex-shrink: 0;
+  stroke-width: 1px;
+  stroke: #7A3939;
+  opacity: 0.6;
+  margin-top: -55vh;
+  margin-left: -10vh;
+}
+
+.wheel-container {
+  position: absolute;
+  cursor: pointer;
+  top: 42%;
+  left: 75%;
+  transform: translate(-50%, -50%); 
+}
+
+.arrow-indicator {
+  position: absolute;
+  top: 37.1dvh;
+  left: 89%; /* Ajustez la distance depuis le bord droit au besoin */
+  width: 0;
+  height: 0;
+  border-top: 5dvh solid transparent;
+  border-bottom: 5dvh solid transparent;
+  border-right: 6dvw solid #BD3F17;
+  filter: drop-shadow(-26px 1px 21.3px #220f0f);
+}
+
+.wheel {
+  border-radius: 70dvh;
+  background: conic-gradient(from 180deg at 50% 50%, #22092C 0deg, #22092C 41.25000089406967deg, #872341 41.28600150346756deg, #872341 86.24999821186066deg, #BE3144 86.28599882125854deg, #BE3144 129.375deg, #F05941 129.41099524497986deg, #F05941 174.375deg, #EC8044 174.41099524497986deg, #EC8044 215.62499284744263deg, #F05941 215.66099882125854deg, #F05941 258.75deg, #BE3144 258.7860059738159deg, #BE3144 303.75deg, #872341 303.7860059738159deg, #872341 348.75deg, #22092C 348.7860059738159deg);
+  box-shadow: 0px 4px 23.1px 0px rgba(24, 24, 24, 0.99);
+  width: 70dvw;
+  height: 70dvw;
+  max-width: 70dvh;
+  max-height: 70dvh;
+  transition: transform 4s ease-out;
+}
+
+.logor {
+  position:absolute; /* Ajout de "position: absolute;" */
+  top: 42%; /* Position au milieu verticalement */
+  left: 75%; /* Position au milieu horizontalement */
+  transform: translate(-50%, -50%);
+  width: 6vw;
+  height: 6vh;
+}
+
+.logoc{
+  position: absolute; /* Ajout de "position: absolute;" */
+  top: 2%; /* Position au milieu verticalement */
+  left: 35%; /* Position au milieu horizontalement */
+}
+
+.spinner{
+  position: absolute; /* Ajout de "position: absolute;" */
+  top: 4%; /* Position au milieu verticalement */
+  left: 36%; /* Position au milieu horizontalement */
+  color: #BD3F17;
+  font-family: 'Manrope', sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.wheel::before {
+  content: '';
+  position: absolute;
+  width: 15dvh;
+  height: 15dvh;
+  background-color: #D9D9D9;
+  filter: drop-shadow(0px 4px 10.9px rgba(0, 0, 0, 0.527));
+  border-radius: 18dvh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.section {
+  position: absolute;
+  text-align: right;
+  top: 50%;
+  left: 50%;
+  width: 95%;
+  transform: translate(-50%, -50%);
+}
+
+textarea {
+  position: absolute;
+  z-index: 1;
+  bottom: 78dvh; /* Ajustez la valeur en fonction de votre mise en page */
+  left: 5dvh; /* Ajustez la valeur en fonction de votre mise en page */
+  width: 20dvw;
+  height: 3.5dvh;
+  resize: none;
+  border-radius: 100vh;
+  border: none;
+  background: linear-gradient(267deg, #4E0F31 0.74%, #4B2929 104.54%);
+  padding: 1dvw;
+  line-height: 3.5dvh; /* Assurez-vous que line-height est égal à la hauteur de la textarea */
+  color: #ccc6c6;
+  outline: none;
+  overflow: hidden;
+} 
+
+#degreesContainer {
+  position: absolute;
+  top: 94%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 34px;
+}
+
+.degree {
+  margin-bottom: 5px;
+}
+
+.text-box {
+  position: relative;
+  z-index: 1;
+  padding: 2.5dvh;
+  margin: auto;
+  margin-top: 1dvh;
+  border: 0px solid #ccc;
+  border-radius: 100vh;
+  width: 90%; /* Remplir la largeur du conteneur */
+  box-sizing: border-box; /* Inclure le padding dans la largeur */
+  flex-shrink: 0;
+}
+
+#sectionsContainer {
+  position: absolute;
+  z-index: 1;
+  bottom: 7dvh; /* Ajustez la valeur en fonction de votre mise en page */
+  left: 1%; /* Ajustez la valeur en fonction de votre mise en page */
+  width: 25dvw;
+  height: 65dvh;
+  flex-shrink: 0;
+  overflow-y:scroll;
+  border-radius: 33px;
+  border-top: 7px solid #8E4A4A;
+  border-bottom: 7px solid #8E4A4A;
+}
+
+#sectionsContainer::-webkit-scrollbar {
+  width: 0;  /* Cacher la barre de défilement sur les navigateurs WebKit */
+}
+
+.delete-button {
+position: absolute;
+z-index: 2;
+cursor: pointer;
+color: #fff;
+background-color: #880F0F;
+padding: 5px 10px;
+border-radius: 50%;
+border: none;
+outline: none; /* Supprime la bordure au focus */
+top: 6%;
+right: 1.5%;
+width: 15%;
+height: 89%;
+}
+
+.delete-button:hover{
+width: 15.2%;
+height: 90%;
+right: 1.4%;
+}
+
+.button-add {
+position: absolute;
+cursor: pointer;
+top: 18.2vh; /* Ajustez la position verticale selon vos besoins */
+left: 22.3vw; /* Ajustez la position horizontale selon vos besoins */
+transform: translate(-50%, -50%) rotate(45deg); /* Centrer le bouton par rapport à son conteneur */
+background-color: rgba(45, 144, 121, 0.76);
+z-index: 2; /* Assurez-vous que le bouton a un indice de profondeur plus élevé que l'image */
+border-radius: 50%;
+border: none;
+outline: none; /* Supprime la bordure au focus */
+width: 3.4vw;
+height: 3.4vw;
+}
+
+.button-add:hover {
+width: 3.5vw; /* Ajustez la largeur lorsqu'on survole le bouton */
+height: 3.5vw; /* Ajustez la hauteur lorsqu'on survole le bouton */
+}
+
+.croix{
+position: relative;
+z-index: 3;
+width: 50%; /* Ajustez la largeur selon vos besoins */
+height: auto;
+}
+
+@media only screen and (max-width: 867px) {
+
+  body {
+    background-color: #1E1E1E;
+    height: 100vh;
+    overflow: hidden;
+    color: #FFF;
+    font-style: normal;
+  }
+  .spinner, .logoc {
+    display: none;
+  }
+
+  .wheel-container{
+    position: absolute;
+    top: 24%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #degreesContainer {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 20px;
+  }
+
+
+  .wheel{
+    border-radius: 70dvh;
+    background: conic-gradient(from 180deg at 50% 50%, #22092C 0deg, #22092C 41.25000089406967deg, #872341 41.28600150346756deg, #872341 86.24999821186066deg, #BE3144 86.28599882125854deg, #BE3144 129.375deg, #F05941 129.41099524497986deg, #F05941 174.375deg, #EC8044 174.41099524497986deg, #EC8044 215.62499284744263deg, #F05941 215.66099882125854deg, #F05941 258.75deg, #BE3144 258.7860059738159deg, #BE3144 303.75deg, #872341 303.7860059738159deg, #872341 348.75deg, #22092C 348.7860059738159deg);
+    box-shadow: 0px 4px 23.1px 0px rgba(24, 24, 24, 0.99);
+    width: 90dvw;
+    height: 90dvw;
+    max-width: 70dvh;
+    max-height: 70dvh;
+    transition: transform 4s ease-out;
+  }
+
+  .wheel::before{
+    content: '';
+    position: absolute;
+    width: 11dvh;
+    height: 11dvh;
+    background-color: #D9D9D9;
+    filter: drop-shadow(0px 4px 10.9px rgba(0, 0, 0, 0.527));
+    border-radius: 18dvh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .logor{
+    position:absolute; /* Ajout de "position: absolute;" */
+    top: 24.8%; /* Position au milieu verticalement */
+    left: 43%; /* Position au milieu horizontalement */
+    transform: translate(-50%, -50%);
+  }
+  .logor img {
+    width: 20vw;
+    height: auto;
+  }
+
+  #sectionsContainer {
+    position: absolute;
+    z-index: 1;
+    bottom: 1dvh; /* Ajustez la valeur en fonction de votre mise en page */
+    left: 1%; /* Ajustez la valeur en fonction de votre mise en page */
+    width: 95dvw;
+    height: 30dvh;
+    flex-shrink: 0;
+    overflow-y:scroll;
+    border-radius: 33px;
+    border-top: 7px solid #8E4A4A;
+    border-bottom: 7px solid #8E4A4A;
+  }
+
+  textarea {
+    position: absolute;
+    z-index: 1;
+    bottom: 35dvh; /* Ajustez la valeur en fonction de votre mise en page */
+    left: 2dvh; /* Ajustez la valeur en fonction de votre mise en page */
+    width: 85dvw;
+    height: 4.5dvh;
+    resize: none;
+    border-radius: 100vh;
+    border: none;
+    background: linear-gradient(267deg, #4E0F31 0.74%, #4B2929 104.54%);
+    padding: 3dvw;
+    line-height: 4.5dvh; /* Assurez-vous que line-height est égal à la hauteur de la textarea */
+    color: #ccc6c6;
+    outline: none;
+    overflow: hidden;
+  }
+
+  .button-add {
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    top: 61.3vh; /* Ajustez la position verticale selon vos besoins */
+    left: 86.6vw; /* Ajustez la position horizontale selon vos besoins */
+    transform: translate(-50%, -50%) rotate(45deg); /* Centrer le bouton par rapport à son conteneur */
+    background-color: rgba(45, 144, 121, 0.76);
+    z-index: 2; /* Assurez-vous que le bouton a un indice de profondeur plus élevé que l'image */
+    border-radius: 50%;
+    border: none;
+    outline: none; /* Supprime la bordure au focus */
+    width: 13vw;
+    height: 13vw;
+  }
+
+
+  .button-add:hover {
+    width: 13vw; /* Ajustez la largeur lorsqu'on survole le bouton */
+    height: 13vw; /* Ajustez la hauteur lorsqu'on survole le bouton */
+  }
+
+  .arrow-indicator{
+    position: absolute;
+    top: 22.5dvh;
+    left: 88%; /* Ajustez la distance depuis le bord droit au besoin */
+    width: 0;
+    height: 0;
+    border-top: 2dvh solid transparent;
+    border-bottom: 2dvh solid transparent;
+    border-right: 12dvw solid #BD3F17;
+    filter: drop-shadow(-26px 1px 21.3px #220f0f);
+  }
+}
+

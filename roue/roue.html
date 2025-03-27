@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="roue.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="content">
+    <div id="degreesContainer"></div>
+    <img class="back" src="../image/Vector 2.png"  >
+    <div class="spinner">Spinner</div>
+    <div class="logoc"><img src="../image/logoc.png"></div>
+    <div class="wheel-container" onclick="rotateWheel()">
+      <div class="wheel" id="wheel"></div>
+    </div>
+    <div class="logor"><img src="../image/logor.png"></div>
+    <div class="arrow-indicator"></div>
+    <textarea id="sectionText" placeholder="Ajouter un choix" oninput="truncateText()" onkeydown="checkEnterKey(event)"></textarea>
+    <button class="button-add" onclick="addSection()"><img class="croix" src="../image/croix.png"></button>
+    <div id="sectionsContainer"></div>
+  </div>
+  <script src="roue.js"></script>
+
+</body>
+
+</html>
